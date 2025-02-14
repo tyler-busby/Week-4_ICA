@@ -107,7 +107,9 @@ Use `ggplot2` to draw a barchart of different `species` included in the dataset.
 ```{r}
 #| label: Species Barchart
 ggplot(data = penguins) + 
-  geom_bar(aes(x= species))
+  geom_bar(aes(x= species)) +
+  labs(x = "Species of Penguin",
+       y = "Number of Pengiuns in the Sample")
 ```
 
 ## Step 6: Scatterplot
@@ -118,7 +120,9 @@ Use `ggplot2` to create a scatterplot of the relationship between the bill lengt
 #| label: scatterplot
 ggplot(data = penguins) + 
   geom_point(aes(x = bill_length_mm, 
-                 y = bill_depth_mm))
+                 y = bill_depth_mm)) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)")
 ```
 
 ## Step 7: Adding A Categorical Variable
@@ -130,6 +134,13 @@ Building off of the plot you made in Step 6, add an aesthetic to differentiate t
 ```{r}
 #| label: scatterplot-with-one-categorical-variable
 
+ggplot(data = penguins) + 
+  geom_point(aes(x = bill_length_mm, 
+                 y = bill_depth_mm,
+                 color = species)) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)",
+       color = "Species:")
 ```
 
 ## Step 8: Adding Another Categorical Variable
@@ -139,6 +150,14 @@ Building off of the plot you made in Step 7, add the location of the penguins ( 
 ```{r}
 #| label: scatterplot-with-two-categorical-variables
 
+ggplot(data = penguins) + 
+  geom_point(aes(x = bill_length_mm, 
+                 y = bill_depth_mm,
+                 color = species)) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)",
+       color = "Species:") +
+  facet_wrap(~ island)
 ```
 
 # Canvas Quiz
