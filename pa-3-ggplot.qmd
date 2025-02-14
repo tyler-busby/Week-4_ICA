@@ -2,13 +2,17 @@
 title: "PA 3: Using Data Visualization to Find the Penguins"
 format: html
 editor: source
+author: Tyler Busby and Kate O'Brien
 execute: 
   echo: true
   error: true
 ---
 
 ```{r}
+#| label: setup
 
+library(tidyverse)
+library(palmerpenguins)
 ```
 
 Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.
